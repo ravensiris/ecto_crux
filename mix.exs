@@ -5,11 +5,11 @@ defmodule EctoCrux.MixProject do
     [
       app: :ecto_crux,
       name: "EctoCrux",
-      version: "1.2.15",
-      elixir: "~> 1.8",
+      version: "1.3.1",
+      elixir: "~> 1.13",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
-      description: "Generate basics and common repo calls within your schema implementation",
+      description: "Generate common repo calls within your context modules",
       deps: deps(),
       package: package()
     ]
@@ -32,8 +32,8 @@ defmodule EctoCrux.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ex_doc, ">= 0.0.0", only: :dev},
-      {:ecto_sql, "~> 3.5", only: [:dev, :test]},
+      {:ex_doc, ">= 0.28.5", only: :dev},
+      {:ecto_sql, "~> 3.8", only: [:dev, :test]},
       {:dialyxir, "~> 1.0", only: [:dev], runtime: false}
     ]
   end
