@@ -480,6 +480,7 @@ defmodule EctoCrux do
             query
             |> crux_build_order_by(Keyword.get(opts, :order_by, @order_by))
             |> crux_build_select(Keyword.get(opts, :select, @select))
+            |> limit(^Keyword.get(opts, :limit, nil))
             |> @repo.all(crux_clean_opts(opts))
             |> ensure_typed_list()
 
